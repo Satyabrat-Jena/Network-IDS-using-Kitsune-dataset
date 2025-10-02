@@ -1,0 +1,2202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Malignant Packet Logger</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&family=Fira+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Global Styles */
+      :root {
+        --primary-color: #3498db;
+        --secondary-color: #2ecc71;
+        --accent-color: #e74c3c;
+        --background-color: #f8f9fa;
+        --text-color: #343a40;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: var(--text-color);
+        background-color: var(--background-color);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Roboto", sans-serif;
+      }
+
+      code,
+      pre {
+        font-family: "Fira Mono", monospace;
+      }
+
+      /* Navigation */
+      .navbar-brand {
+        font-weight: 700;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, var(--primary-color), #2980b9);
+        padding: 80px 0;
+      }
+
+      /* Feature Icons */
+      .feature-icon {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        border-radius: 50%;
+      }
+
+      /* Cards */
+      .card {
+        border: none;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-bottom: 20px;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Code Blocks */
+      pre {
+        border-radius: 6px;
+        background-color: #f8f9fa;
+        padding: 15px;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #343a40;
+        color: white;
+        padding: 40px 0;
+      }
+
+      footer a {
+        color: white;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: var(--primary-color);
+      }
+
+      /* Tabs */
+      .nav-tabs .nav-link {
+        border: none;
+        color: var(--text-color);
+        font-weight: 500;
+      }
+
+      .nav-tabs .nav-link.active {
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--primary-color);
+        background-color: transparent;
+      }
+
+      /* Contract Display */
+      .contract-display {
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      /* Demo Form */
+      .feature-row {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><i class="fas fa-shield-alt me-2"></i>Malignant Packet Logger</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#documentation">Documentation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#demo">Demo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero text-white">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h1 class="display-4 fw-bold mb-3">Malignant Packet Logger</h1>
+            <p class="lead mb-4">
+              Securely log network threats to the Ethereum blockchain with
+              immutable, transparent records of malignant packet features.
+            </p>
+            <div class="d-flex gap-3">
+              <a href="#demo" class="btn btn-light btn-lg">Try Demo</a>
+              <a href="#documentation" class="btn btn-outline-light btn-lg"
+                >View Documentation</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6 d-none d-lg-block text-center">
+            <svg
+              width="400"
+              height="300"
+              viewBox="0 0 400 300"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <!-- Network Security Illustration -->
+              <defs>
+                <linearGradient
+                  id="blueGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stop-color="#3498db" />
+                  <stop offset="100%" stop-color="#2980b9" />
+                </linearGradient>
+                <filter
+                  id="shadow"
+                  x="-20%"
+                  y="-20%"
+                  width="140%"
+                  height="140%"
+                >
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+                  <feOffset dx="2" dy="2" result="offsetblur" />
+                  <feComponentTransfer>
+                    <feFuncA type="linear" slope="0.5" />
+                  </feComponentTransfer>
+                  <feMerge>
+                    <feMergeNode />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <!-- Background -->
+              <rect
+                x="0"
+                y="0"
+                width="400"
+                height="300"
+                fill="#f8f9fa"
+                opacity="0.1"
+              />
+
+              <!-- Blockchain -->
+              <g transform="translate(200, 150)" filter="url(#shadow)">
+                <!-- Chain of blocks -->
+                <rect
+                  x="-160"
+                  y="-20"
+                  width="40"
+                  height="40"
+                  rx="5"
+                  fill="url(#blueGradient)"
+                />
+                <rect
+                  x="-100"
+                  y="-20"
+                  width="40"
+                  height="40"
+                  rx="5"
+                  fill="url(#blueGradient)"
+                />
+                <rect
+                  x="-40"
+                  y="-20"
+                  width="40"
+                  height="40"
+                  rx="5"
+                  fill="url(#blueGradient)"
+                />
+                <rect
+                  x="20"
+                  y="-20"
+                  width="40"
+                  height="40"
+                  rx="5"
+                  fill="url(#blueGradient)"
+                />
+                <rect
+                  x="80"
+                  y="-20"
+                  width="40"
+                  height="40"
+                  rx="5"
+                  fill="url(#blueGradient)"
+                />
+
+                <!-- Chain links -->
+                <line
+                  x1="-120"
+                  y1="0"
+                  x2="-100"
+                  y2="0"
+                  stroke="#3498db"
+                  stroke-width="4"
+                />
+                <line
+                  x1="-60"
+                  y1="0"
+                  x2="-40"
+                  y2="0"
+                  stroke="#3498db"
+                  stroke-width="4"
+                />
+                <line
+                  x1="0"
+                  y1="0"
+                  x2="20"
+                  y2="0"
+                  stroke="#3498db"
+                  stroke-width="4"
+                />
+                <line
+                  x1="60"
+                  y1="0"
+                  x2="80"
+                  y2="0"
+                  stroke="#3498db"
+                  stroke-width="4"
+                />
+
+                <!-- Block content -->
+                <rect
+                  x="-155"
+                  y="-10"
+                  width="30"
+                  height="5"
+                  rx="2"
+                  fill="white"
+                  opacity="0.7"
+                />
+                <rect
+                  x="-155"
+                  y="-2"
+                  width="20"
+                  height="5"
+                  rx="2"
+                  fill="white"
+                  opacity="0.7"
+                />
+                <rect
+                  x="-155"
+                  y="6"
+                  width="25"
+                  height="5"
+                  rx="2"
+                  fill="white"
+                  opacity="0.7"
+                />
+
+                <rect
+                  x="-95"
+                  y="-10"
+                  width="30"
+                  height="5"
+                  rx="2"
+                  fill="white"
+                  opacity="0.7"
+                />
+                <rect
+                  x="-95"
+                  y="-2"
+                  width="20"
+                  height="5"
+                  rx="2"
+                  fill="white"
+                  opacity="0.7"
+                />
+                <rect
+                  x="-95"
+                  y="6"
+                  width="25"
+                  height="5"
+                  rx="2"
+                  fill="white"
+                  opacity="0.7"
+                />
+
+                <rect
+                  x="-35"
+                  y="-10"
+                  width="30"
+                  height="5"
+                  rx="2"
+                  fill="white"
+                  opacity="0.7"
+                />
+                <rect
+                  x="-35"
+                  y="-2"
+                  width="20"
+                  height="5"
+                  rx="2"
+                  fill="white"
+                  opacity="0.7"
+                />
+                <rect
+                  x="-35"
+                  y="6"
+                  width="25"
+                  height="5"
+                  rx="2"
+                  fill="white"
+                  opacity="0.7"
+                />
+
+                <rect
+                  x="25"
+                  y="-10"
+                  width="30"
+                  height="5"
+                  rx="2"
+                  fill="white"
+                  opacity="0.7"
+                />
+                <rect
+                  x="25"
+                  y="-2"
+                  width="20"
+                  height="5"
+                  rx="2"
+                  fill="white"
+                  opacity="0.7"
+                />
+                <rect
+                  x="25"
+                  y="6"
+                  width="25"
+                  height="5"
+                  rx="2"
+                  fill="white"
+                  opacity="0.7"
+                />
+
+                <rect
+                  x="85"
+                  y="-10"
+                  width="30"
+                  height="5"
+                  rx="2"
+                  fill="white"
+                  opacity="0.7"
+                />
+                <rect
+                  x="85"
+                  y="-2"
+                  width="20"
+                  height="5"
+                  rx="2"
+                  fill="white"
+                  opacity="0.7"
+                />
+                <rect
+                  x="85"
+                  y="6"
+                  width="25"
+                  height="5"
+                  rx="2"
+                  fill="white"
+                  opacity="0.7"
+                />
+              </g>
+
+              <!-- Network and Packets -->
+              <g transform="translate(200, 100)" filter="url(#shadow)">
+                <!-- Network nodes -->
+                <circle cx="-100" cy="0" r="15" fill="#2ecc71" />
+                <circle cx="0" cy="-40" r="15" fill="#e74c3c" />
+                <circle cx="100" cy="0" r="15" fill="#2ecc71" />
+                <circle cx="0" cy="40" r="15" fill="#2ecc71" />
+
+                <!-- Network connections -->
+                <line
+                  x1="-100"
+                  y1="0"
+                  x2="0"
+                  y2="-40"
+                  stroke="#95a5a6"
+                  stroke-width="2"
+                />
+                <line
+                  x1="-100"
+                  y1="0"
+                  x2="0"
+                  y2="40"
+                  stroke="#95a5a6"
+                  stroke-width="2"
+                />
+                <line
+                  x1="0"
+                  y1="-40"
+                  x2="100"
+                  y2="0"
+                  stroke="#95a5a6"
+                  stroke-width="2"
+                />
+                <line
+                  x1="0"
+                  y1="40"
+                  x2="100"
+                  y2="0"
+                  stroke="#95a5a6"
+                  stroke-width="2"
+                />
+                <line
+                  x1="0"
+                  y1="-40"
+                  x2="0"
+                  y2="40"
+                  stroke="#e74c3c"
+                  stroke-width="2"
+                  stroke-dasharray="5,3"
+                />
+
+                <!-- Packets -->
+                <rect
+                  x="-60"
+                  y="-25"
+                  width="10"
+                  height="10"
+                  rx="2"
+                  fill="#e74c3c"
+                  transform="rotate(45, -55, -20)"
+                />
+                <rect
+                  x="50"
+                  y="-25"
+                  width="10"
+                  height="10"
+                  rx="2"
+                  fill="#e74c3c"
+                  transform="rotate(45, 55, -20)"
+                />
+                <rect
+                  x="-60"
+                  y="15"
+                  width="10"
+                  height="10"
+                  rx="2"
+                  fill="#e74c3c"
+                  transform="rotate(45, -55, 20)"
+                />
+                <rect
+                  x="50"
+                  y="15"
+                  width="10"
+                  height="10"
+                  rx="2"
+                  fill="#e74c3c"
+                  transform="rotate(45, 55, 20)"
+                />
+
+                <!-- Node icons -->
+                <rect
+                  x="-105"
+                  y="-5"
+                  width="10"
+                  height="10"
+                  rx="1"
+                  fill="white"
+                />
+                <rect
+                  x="-5"
+                  y="-45"
+                  width="10"
+                  height="10"
+                  rx="1"
+                  fill="white"
+                />
+                <rect
+                  x="95"
+                  y="-5"
+                  width="10"
+                  height="10"
+                  rx="1"
+                  fill="white"
+                />
+                <rect
+                  x="-5"
+                  y="35"
+                  width="10"
+                  height="10"
+                  rx="1"
+                  fill="white"
+                />
+              </g>
+
+              <!-- Lock/Security Symbol -->
+              <g transform="translate(200, 50)" filter="url(#shadow)">
+                <rect
+                  x="-20"
+                  y="-10"
+                  width="40"
+                  height="30"
+                  rx="5"
+                  fill="#3498db"
+                />
+                <path
+                  d="M -10 -10 L -10 -20 C -10 -30 10 -30 10 -20 L 10 -10"
+                  stroke="#3498db"
+                  stroke-width="5"
+                  fill="none"
+                />
+                <circle cx="0" cy="5" r="5" fill="white" />
+                <line
+                  x1="0"
+                  y1="5"
+                  x2="0"
+                  y2="12"
+                  stroke="white"
+                  stroke-width="2"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Key Features</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <div
+                  class="feature-icon bg-primary text-white rounded-circle mb-3"
+                >
+                  <i class="fas fa-lock fa-2x"></i>
+                </div>
+                <h3 class="card-title h5">Immutable Records</h3>
+                <p class="card-text">
+                  Store malignant packet features on the blockchain for
+                  tamper-proof security incident records.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <div
+                  class="feature-icon bg-primary text-white rounded-circle mb-3"
+                >
+                  <i class="fas fa-gas-pump fa-2x"></i>
+                </div>
+                <h3 class="card-title h5">Gas Optimized</h3>
+                <p class="card-text">
+                  Efficiently store only the most relevant packet features to
+                  minimize blockchain storage costs.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <div
+                  class="feature-icon bg-primary text-white rounded-circle mb-3"
+                >
+                  <i class="fas fa-code fa-2x"></i>
+                </div>
+                <h3 class="card-title h5">Easy Integration</h3>
+                <p class="card-text">
+                  Simple web3.py interface for seamless integration with
+                  existing network security systems.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5">How It Works</h2>
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="workflow-diagram">
+              <div class="card mb-3">
+                <div class="card-body d-flex align-items-center">
+                  <div
+                    class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+                    style="width: 40px; height: 40px"
+                  >
+                    1
+                  </div>
+                  <div>
+                    <h5 class="mb-1">Packet Detection</h5>
+                    <p class="mb-0">
+                      Kitsune IDS identifies malignant network packets based on
+                      anomaly detection.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center mb-3">
+                <i class="fas fa-arrow-down text-primary"></i>
+              </div>
+              <div class="card mb-3">
+                <div class="card-body d-flex align-items-center">
+                  <div
+                    class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+                    style="width: 40px; height: 40px"
+                  >
+                    2
+                  </div>
+                  <div>
+                    <h5 class="mb-1">Feature Extraction</h5>
+                    <p class="mb-0">
+                      Key features are extracted from malignant packets and
+                      prepared for blockchain storage.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center mb-3">
+                <i class="fas fa-arrow-down text-primary"></i>
+              </div>
+              <div class="card mb-3">
+                <div class="card-body d-flex align-items-center">
+                  <div
+                    class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+                    style="width: 40px; height: 40px"
+                  >
+                    3
+                  </div>
+                  <div>
+                    <h5 class="mb-1">Blockchain Logging</h5>
+                    <p class="mb-0">
+                      Features are logged to the Ethereum blockchain via a smart
+                      contract for permanent storage.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center mb-3">
+                <i class="fas fa-arrow-down text-primary"></i>
+              </div>
+              <div class="card mb-3">
+                <div class="card-body d-flex align-items-center">
+                  <div
+                    class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+                    style="width: 40px; height: 40px"
+                  >
+                    4
+                  </div>
+                  <div>
+                    <h5 class="mb-1">Verification & Analysis</h5>
+                    <p class="mb-0">
+                      Logged packets can be verified by trusted authorities and
+                      analyzed for security insights.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section id="documentation" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Documentation</h2>
+
+        <div class="row">
+          <!-- Sidebar Navigation -->
+          <div class="col-lg-3">
+            <div class="sticky-top pt-3" style="top: 20px">
+              <div class="list-group">
+                <a
+                  href="#overview"
+                  class="list-group-item list-group-item-action"
+                  >Overview</a
+                >
+                <a
+                  href="#smart-contract"
+                  class="list-group-item list-group-item-action"
+                  >Smart Contract</a
+                >
+                <a href="#setup" class="list-group-item list-group-item-action"
+                  >Setup & Installation</a
+                >
+                <a href="#web3py" class="list-group-item list-group-item-action"
+                  >Web3.py Integration</a
+                >
+                <a
+                  href="#feature-selection"
+                  class="list-group-item list-group-item-action"
+                  >Feature Selection</a
+                >
+                <a
+                  href="#optimization"
+                  class="list-group-item list-group-item-action"
+                  >Gas Optimization</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Content -->
+          <div class="col-lg-9">
+            <!-- Overview Section -->
+            <section id="overview" class="mb-5">
+              <h3 class="border-bottom pb-2 mb-4">Overview</h3>
+              <p>
+                The Malignant Packet Logger is a system designed to securely log
+                features of malignant network packets to the Ethereum
+                blockchain. This provides an immutable, transparent record of
+                network security incidents that can be verified and analyzed.
+              </p>
+
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h5 class="card-title">Key Components</h5>
+                  <ul>
+                    <li>
+                      <strong>Smart Contract:</strong> Ethereum-based storage
+                      for packet features
+                    </li>
+                    <li>
+                      <strong>Web3.py Interface:</strong> Python library for
+                      interacting with the blockchain
+                    </li>
+                    <li>
+                      <strong>Feature Extraction:</strong> Selecting and
+                      preparing packet data for storage
+                    </li>
+                    <li>
+                      <strong>Verification Mechanism:</strong> Allowing trusted
+                      authorities to verify incidents
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <p>
+                The system is designed to work with the Kitsune Intrusion
+                Detection System (IDS) dataset, which contains network packet
+                data with numerous numerical features. Each packet is
+                represented as a row in the dataset, with columns representing
+                different features.
+              </p>
+            </section>
+
+            <!-- Smart Contract Section -->
+            <section id="smart-contract" class="mb-5">
+              <h3 class="border-bottom pb-2 mb-4">Smart Contract</h3>
+              <p>
+                The MalignantPacketLogger smart contract is written in Solidity
+                and deployed on the Ethereum blockchain. It provides functions
+                for logging packet features, retrieving packet information, and
+                verifying packets.
+              </p>
+
+              <div class="card mb-4">
+                <div class="card-header bg-light">
+                  <h5 class="card-title mb-0">Contract Structure</h5>
+                </div>
+                <div class="card-body">
+                  <pre><code>// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract PacketLogger {
+    struct Packet {
+        address sender;
+        uint256 timestamp;
+        string features;
+    }
+
+    Packet[] public packets;
+
+    event PacketLogged(address indexed sender, uint256 timestamp, string features);
+
+    function logPacket(string memory _features) public {
+        packets.push(Packet(msg.sender, block.timestamp, _features));
+        emit PacketLogged(msg.sender, block.timestamp, _features);
+    }
+
+    function getPacketCount() public view returns (uint256) {
+        return packets.length;
+    }
+
+    function getPacket(uint256 index) public view returns (address, uint256, string memory) {
+        require(index < packets.length, "Index out of bounds");
+        Packet memory p = packets[index];
+        return (p.sender, p.timestamp, p.features);
+    }
+}
+}</code></pre>
+                </div>
+              </div>
+
+              <h4 class="mb-3">Key Functions</h4>
+
+              <div class="accordion mb-4" id="contractFunctions">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseLogPacket"
+                    >
+                      logPacket()
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseLogPacket"
+                    class="accordion-collapse collapse show"
+                    data-bs-parent="#contractFunctions"
+                  >
+                    <div class="accordion-body">
+                      <p>Logs a new malignant packet to the blockchain.</p>
+                      <pre><code>function logPacket(
+    string memory attackType,
+    uint256[] memory featureIndices,
+    int256[] memory featureValues
+) public onlyAuthorized returns (uint256) {
+    // Implementation details...
+}</code></pre>
+                      <p><strong>Parameters:</strong></p>
+                      <ul>
+                        <li>
+                          <code>attackType</code>: String describing the type of
+                          attack
+                        </li>
+                        <li>
+                          <code>featureIndices</code>: Array of feature indices
+                          to store
+                        </li>
+                        <li>
+                          <code>featureValues</code>: Array of feature values
+                          (scaled by 10^6)
+                        </li>
+                      </ul>
+                      <p>
+                        <strong>Returns:</strong> The ID of the logged packet
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseGetPacketInfo"
+                    >
+                      getPacketInfo()
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseGetPacketInfo"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#contractFunctions"
+                  >
+                    <div class="accordion-body">
+                      <p>Retrieves information about a logged packet.</p>
+                      <pre><code>function getPacketInfo(uint256 packetId) public view returns (
+    uint256 timestamp,
+    string memory attackType,
+    address reporter,
+    bool verified
+) {
+    // Implementation details...
+}</code></pre>
+                      <p><strong>Parameters:</strong></p>
+                      <ul>
+                        <li>
+                          <code>packetId</code>: ID of the packet to retrieve
+                        </li>
+                      </ul>
+                      <p>
+                        <strong>Returns:</strong> Packet timestamp, attack type,
+                        reporter address, and verification status
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseGetPacketFeatures"
+                    >
+                      getPacketFeatures()
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseGetPacketFeatures"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#contractFunctions"
+                  >
+                    <div class="accordion-body">
+                      <p>Retrieves the features of a logged packet.</p>
+                      <pre><code>function getPacketFeatures(uint256 packetId) public view returns (
+    uint256[] memory featureIndices,
+    int256[] memory featureValues
+) {
+    // Implementation details...
+}</code></pre>
+                      <p><strong>Parameters:</strong></p>
+                      <ul>
+                        <li>
+                          <code>packetId</code>: ID of the packet to retrieve
+                          features for
+                        </li>
+                      </ul>
+                      <p>
+                        <strong>Returns:</strong> Arrays of feature indices and
+                        values
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Setup Section -->
+            <section id="setup" class="mb-5">
+              <h3 class="border-bottom pb-2 mb-4">Setup & Installation</h3>
+              <p>
+                Follow these steps to set up the Malignant Packet Logger system:
+              </p>
+
+              <div class="card mb-4">
+                <div class="card-header bg-light">
+                  <h5 class="card-title mb-0">Prerequisites</h5>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <li>Python 3.6 or higher</li>
+                    <li>Node.js and npm</li>
+                    <li>
+                      Ganache (for local testing) or access to an Ethereum node
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <h4 class="mb-3">Installation Steps</h4>
+
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    1. Install Required Python Packages
+                  </h5>
+                  <pre><code>pip install web3 py-solc-x pandas numpy</code></pre>
+                </div>
+              </div>
+
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    2. Install Ganache (for local testing)
+                  </h5>
+                  <pre><code>npm install -g ganache</code></pre>
+                </div>
+              </div>
+
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">3. Deploy the Smart Contract</h5>
+                  <p>
+                    Create a file named <code>deploy_contract.py</code> with the
+                    deployment script and run it:
+                  </p>
+                  <pre><code>python deploy_contract.py</code></pre>
+                  <p>
+                    This will compile the contract, deploy it to Ganache, and
+                    save the contract address and ABI for later use.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Web3.py Integration Section -->
+            <section id="web3py" class="mb-5">
+              <h3 class="border-bottom pb-2 mb-4">Web3.py Integration</h3>
+              <p>
+                Web3.py is used to interact with the Ethereum blockchain and the
+                deployed smart contract. Here's how to integrate it into your
+                application:
+              </p>
+
+              <div class="card mb-4">
+                <div class="card-header bg-light">
+                  <h5 class="card-title mb-0">Connecting to the Contract</h5>
+                </div>
+                <div class="card-body">
+                  <pre><code>import json
+from web3 import Web3
+
+# Load contract details
+def load_contract():
+    # Load ABI
+    with open('contract_abi.json', 'r') as f:
+        contract_abi = json.load(f)
+    
+    # Load contract address
+    with open('contract_address.txt', 'r') as f:
+        contract_address = f.read().strip()
+    
+    # Connect to Ethereum node
+    w3 = Web3(Web3.HTTPProvider('http://127.0.0.1:8545'))
+    
+    # Check connection
+    if not w3.is_connected():
+        raise Exception("Failed to connect to Ethereum node")
+    
+    # Get account
+    account = w3.eth.accounts[0]
+    
+    # Create contract instance
+    contract = w3.eth.contract(address=contract_address, abi=contract_abi)
+    
+    return w3, contract, account</code></pre>
+                </div>
+              </div>
+
+              <div class="card mb-4">
+                <div class="card-header bg-light">
+                  <h5 class="card-title mb-0">Logging a Packet</h5>
+                </div>
+                <div class="card-body">
+                  <pre><code>def log_malignant_packet(contract, account, packet_data, attack_type):
+    """
+    Log a malignant packet to the blockchain.
+    
+    Args:
+        contract: Web3 contract instance
+        account: Ethereum account to use for transaction
+        packet_data: Packet features (pandas Series or dict)
+        attack_type: String describing the attack type
+    
+    Returns:
+        transaction_receipt: Receipt of the blockchain transaction
+    """
+    # Extract important features
+    feature_indices, feature_values = extract_features(packet_data)
+    
+    # Log the packet
+    tx = contract.functions.logPacket(
+        attack_type,
+        feature_indices,
+        feature_values
+    ).build_transaction({
+        'from': account,
+        'gas': 3000000,
+        'gasPrice': Web3(Web3.HTTPProvider('http://127.0.0.1:8545')).eth.gas_price,
+        'nonce': Web3(Web3.HTTPProvider('http://127.0.0.1:8545')).eth.get_transaction_count(account)
+    })
+    
+    # Send the transaction
+    tx_hash = Web3(Web3.HTTPProvider('http://127.0.0.1:8545')).eth.send_transaction(tx)
+    
+    # Wait for the transaction to be mined
+    tx_receipt = Web3(Web3.HTTPProvider('http://127.0.0.1:8545')).eth.wait_for_transaction_receipt(tx_hash)
+    
+    return tx_receipt</code></pre>
+                </div>
+              </div>
+            </section>
+
+            <!-- Feature Selection Section -->
+            <section id="feature-selection" class="mb-5">
+              <h3 class="border-bottom pb-2 mb-4">Feature Selection</h3>
+              <p>
+                Since storing all 100+ features would be prohibitively expensive
+                in terms of gas costs, it's important to select only the most
+                relevant features for blockchain storage.
+              </p>
+
+              <div class="card mb-4">
+                <div class="card-header bg-light">
+                  <h5 class="card-title mb-0">Feature Extraction Function</h5>
+                </div>
+                <div class="card-body">
+                  <pre><code>def extract_features(packet_data, important_feature_indices=None):
+    """
+    Extract the most important features from a packet.
+    
+    Args:
+        packet_data: A pandas Series or dict containing packet features
+        important_feature_indices: List of indices of important features to extract
+                                  If None, selects the first 10 non-zero features
+    
+    Returns:
+        feature_indices: List of feature indices
+        feature_values: List of feature values (scaled for blockchain storage)
+    """
+    # If no specific indices provided, select first 10 non-zero features
+    if important_feature_indices is None:
+        # Convert to dict if Series
+        if isinstance(packet_data, pd.Series):
+            packet_dict = packet_data.to_dict()
+        else:
+            packet_dict = packet_data
+            
+        # Filter out non-numeric columns and the label column 'x'
+        numeric_features = {k: v for k, v in packet_dict.items() 
+                           if k != 'x' and isinstance(v, (int, float))}
+        
+        # Sort by absolute value to find most significant features
+        sorted_features = sorted(numeric_features.items(), 
+                                key=lambda x: abs(x[1]), 
+                                reverse=True)
+        
+        # Take top 10 or fewer if not enough features
+        top_features = sorted_features[:min(10, len(sorted_features))]
+        
+        # Extract indices and values
+        feature_indices = [int(k) if isinstance(k, (int, str)) and k.isdigit() else i 
+                          for i, (k, _) in enumerate(top_features)]
+        feature_values = [v for _, v in top_features]
+    else:
+        # Use the provided indices
+        feature_indices = important_feature_indices
+        feature_values = [packet_data[idx] for idx in important_feature_indices]
+    
+    # Scale values for blockchain storage (multiply by 10^6 to preserve decimals)
+    scaled_values = [int(v * 1_000_000) for v in feature_values]
+    
+    return feature_indices, scaled_values</code></pre>
+                </div>
+              </div>
+
+              <h4 class="mb-3">Feature Selection Strategies</h4>
+
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h5 class="card-title">Magnitude-Based Selection</h5>
+                      <p class="card-text">
+                        Select features with the largest absolute values, as
+                        these often represent the most significant anomalies.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h5 class="card-title">Domain Knowledge</h5>
+                      <p class="card-text">
+                        Select features known to be important for specific
+                        attack types based on network security expertise.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Gas Optimization Section -->
+            <section id="optimization" class="mb-5">
+              <h3 class="border-bottom pb-2 mb-4">Gas Optimization</h3>
+              <p>
+                Gas optimization is crucial for cost-effective blockchain
+                logging. Here are strategies to minimize gas costs:
+              </p>
+
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h5 class="card-title">Optimization Strategies</h5>
+                  <ul>
+                    <li>
+                      <strong>Feature Limitation:</strong> Store only 10-20 key
+                      features instead of all 100+
+                    </li>
+                    <li>
+                      <strong>Batch Processing:</strong> Log multiple packets in
+                      a single transaction when possible
+                    </li>
+                    <li>
+                      <strong>Data Scaling:</strong> Scale floating-point values
+                      to integers to avoid complex storage
+                    </li>
+                    <li>
+                      <strong>Efficient Data Structures:</strong> Use arrays
+                      instead of mappings when appropriate
+                    </li>
+                    <li>
+                      <strong>Off-chain Storage:</strong> Consider storing full
+                      feature sets off-chain with only hashes on-chain
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="alert alert-info">
+                <h5 class="alert-heading">
+                  <i class="fas fa-info-circle me-2"></i>Gas Usage Example
+                </h5>
+                <p class="mb-0">
+                  Logging a packet with 10 features typically consumes
+                  approximately 500,000-600,000 gas. At a gas price of 20 Gwei,
+                  this would cost about 0.01-0.012 ETH per transaction.
+                </p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5">Interactive Demo</h2>
+
+        <div class="row">
+          <!-- Form Column -->
+          <div class="col-lg-6">
+            <div class="card shadow-sm mb-4">
+              <div class="card-header bg-primary text-white">
+                <h3 class="card-title h5 mb-0">Log Malignant Packet</h3>
+              </div>
+              <div class="card-body">
+                <form id="packetForm">
+                  <div class="mb-3">
+                    <label for="attackType" class="form-label"
+                      >Attack Type</label
+                    >
+                    <select class="form-select" id="attackType" required>
+                      <option value="" selected disabled>
+                        Select attack type
+                      </option>
+                      <option value="ARP_MitM">ARP MitM</option>
+                      <option value="Active_Wiretap">Active Wiretap</option>
+                      <option value="Fuzzing">Fuzzing</option>
+                      <option value="Mirai">Mirai</option>
+                      <option value="OS_Scan">OS Scan</option>
+                      <option value="SSDP_Flood">SSDP Flood</option>
+                      <option value="SSL_Renegotiation">
+                        SSL Renegotiation
+                      </option>
+                      <option value="SYN_DoS">SYN DoS</option>
+                      <option value="Video_Injection">Video Injection</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Packet Features</label>
+                    <div class="alert alert-info small">
+                      <i class="fas fa-info-circle me-2"></i>Add up to 10
+                      features that characterize this malignant packet.
+                    </div>
+
+                    <div id="featuresContainer">
+                      <div class="feature-row mb-2">
+                        <div class="row g-2">
+                          <div class="col-5">
+                            <input
+                              type="number"
+                              class="form-control feature-index"
+                              placeholder="Index"
+                              min="0"
+                              required
+                            />
+                          </div>
+                          <div class="col-7">
+                            <input
+                              type="number"
+                              class="form-control feature-value"
+                              placeholder="Value"
+                              step="any"
+                              required
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button
+                      type="button"
+                      id="addFeatureBtn"
+                      class="btn btn-sm btn-outline-secondary mt-2"
+                    >
+                      <i class="fas fa-plus me-1"></i> Add Feature
+                    </button>
+                  </div>
+
+                  <div class="d-grid">
+                    <button
+                      type="submit"
+                      id="logPacketBtn"
+                      class="btn btn-primary"
+                    >
+                      <i class="fas fa-upload me-2"></i> Log to Blockchain
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Sample Data Card -->
+            <div class="card shadow-sm">
+              <div class="card-header bg-secondary text-white">
+                <h3 class="card-title h5 mb-0">Sample Data</h3>
+              </div>
+              <div class="card-body">
+                <p class="card-text small">
+                  Use these sample values for testing:
+                </p>
+                <button
+                  type="button"
+                  id="loadSampleBtn"
+                  class="btn btn-sm btn-outline-secondary"
+                >
+                  Load Sample Data
+                </button>
+
+                <div class="mt-3">
+                  <h6>ARP MitM Attack Sample:</h6>
+                  <pre class="bg-light p-2 small"><code>Feature 8: 140928.76008
+Feature 5: 139699.42171
+Feature 2: 137946.585241
+Feature 10: 137946.585241
+Feature 9: 1297.930495
+Feature 7: 1294.355651
+Feature 4: 1290.621872
+Feature 1: 1287.930495
+Feature 6: 862.105671
+Feature 3: 277.376266</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Results Column -->
+          <div class="col-lg-6">
+            <div class="card shadow-sm mb-4">
+              <div class="card-header bg-success text-white">
+                <h3 class="card-title h5 mb-0">Transaction Status</h3>
+              </div>
+              <div class="card-body">
+                <div id="transactionStatus" class="d-none">
+                  <div class="alert alert-info mb-3" id="statusAlert">
+                    <div class="d-flex align-items-center">
+                      <div
+                        class="spinner-border spinner-border-sm me-2"
+                        role="status"
+                        id="statusSpinner"
+                      >
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
+                      <div id="statusMessage">Processing transaction...</div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Transaction Hash</label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        class="form-control font-monospace"
+                        id="txHash"
+                        readonly
+                      />
+                      <button
+                        class="btn btn-outline-secondary"
+                        type="button"
+                        id="copyTxBtn"
+                      >
+                        <i class="fas fa-copy"></i>
+                      </button>
+                    </div>
+                    <div class="form-text">
+                      This is the unique identifier for your blockchain
+                      transaction.
+                    </div>
+                  </div>
+                </div>
+
+                <div id="noTransactionMessage">
+                  <div class="text-center py-4">
+                    <i class="fas fa-arrow-left fa-3x text-muted mb-3"></i>
+                    <p class="text-muted">
+                      Submit a packet on the left to see transaction details
+                      here.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card shadow-sm">
+              <div class="card-header bg-info text-white">
+                <h3 class="card-title h5 mb-0">Logged Packet Details</h3>
+              </div>
+              <div class="card-body">
+                <div id="packetDetails" class="d-none">
+                  <div class="row mb-3">
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="form-label fw-bold">Packet ID</label>
+                        <p id="packetId" class="mb-0">-</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="form-label fw-bold">Timestamp</label>
+                        <p id="packetTimestamp" class="mb-0">-</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="form-label fw-bold">Attack Type</label>
+                        <p id="packetAttackType" class="mb-0">-</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="form-label fw-bold">Reporter</label>
+                        <p id="packetReporter" class="mb-0 text-truncate">-</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label fw-bold">Features</label>
+                    <div class="table-responsive">
+                      <table class="table table-sm table-striped">
+                        <thead>
+                          <tr>
+                            <th>Index</th>
+                            <th>Value</th>
+                          </tr>
+                        </thead>
+                        <tbody id="featuresTable">
+                          <!-- Features will be populated here -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="noPacketMessage">
+                  <div class="text-center py-4">
+                    <i class="fas fa-database fa-3x text-muted mb-3"></i>
+                    <p class="text-muted">
+                      No packet data available yet. Log a packet to see details.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">About the Project</h2>
+
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-6">
+            <h3 class="mb-4">Project Background</h3>
+            <p>
+              The Malignant Packet Logger project was developed to address the
+              need for secure, immutable records of network security incidents.
+              By leveraging blockchain technology, this system provides a
+              tamper-proof method for logging features of malignant network
+              packets detected by intrusion detection systems.
+            </p>
+            <p>
+              This approach ensures that security incidents cannot be altered or
+              deleted, creating a reliable audit trail that can be used for
+              forensic analysis, compliance reporting, and security research.
+            </p>
+          </div>
+          <div class="col-lg-6 text-center">
+            <div class="card shadow">
+              <div class="card-body">
+                <svg
+                  width="400"
+                  height="300"
+                  viewBox="0 0 400 300"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <!-- Blockchain Security Concept -->
+                  <defs>
+                    <linearGradient
+                      id="blueGradient2"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stop-color="#3498db" />
+                      <stop offset="100%" stop-color="#2980b9" />
+                    </linearGradient>
+                  </defs>
+
+                  <!-- Background -->
+                  <rect x="0" y="0" width="400" height="300" fill="#f8f9fa" />
+
+                  <!-- Shield -->
+                  <path
+                    d="M 200 50 L 100 100 L 100 200 C 100 250 200 280 200 280 C 200 280 300 250 300 200 L 300 100 Z"
+                    fill="url(#blueGradient2)"
+                    opacity="0.8"
+                  />
+
+                  <!-- Lock -->
+                  <rect
+                    x="170"
+                    y="140"
+                    width="60"
+                    height="80"
+                    rx="10"
+                    fill="#2c3e50"
+                  />
+                  <rect
+                    x="180"
+                    y="150"
+                    width="40"
+                    height="60"
+                    rx="5"
+                    fill="#34495e"
+                  />
+                  <circle cx="200" cy="180" r="10" fill="#ecf0f1" />
+                  <rect x="195" y="180" width="10" height="15" fill="#ecf0f1" />
+                  <path
+                    d="M 170 140 C 170 140 170 120 200 120 C 230 120 230 140 230 140"
+                    stroke="#2c3e50"
+                    stroke-width="10"
+                    fill="none"
+                  />
+
+                  <!-- Blockchain -->
+                  <rect
+                    x="150"
+                    y="80"
+                    width="20"
+                    height="20"
+                    rx="3"
+                    fill="#ecf0f1"
+                  />
+                  <rect
+                    x="180"
+                    y="80"
+                    width="20"
+                    height="20"
+                    rx="3"
+                    fill="#ecf0f1"
+                  />
+                  <rect
+                    x="210"
+                    y="80"
+                    width="20"
+                    height="20"
+                    rx="3"
+                    fill="#ecf0f1"
+                  />
+                  <rect
+                    x="240"
+                    y="80"
+                    width="20"
+                    height="20"
+                    rx="3"
+                    fill="#ecf0f1"
+                  />
+                  <line
+                    x1="170"
+                    y1="90"
+                    x2="180"
+                    y2="90"
+                    stroke="#3498db"
+                    stroke-width="2"
+                  />
+                  <line
+                    x1="200"
+                    y1="90"
+                    x2="210"
+                    y2="90"
+                    stroke="#3498db"
+                    stroke-width="2"
+                  />
+                  <line
+                    x1="230"
+                    y1="90"
+                    x2="240"
+                    y2="90"
+                    stroke="#3498db"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center mb-5 flex-lg-row-reverse">
+          <div class="col-lg-6">
+            <h3 class="mb-4">Kitsune IDS Integration</h3>
+            <p>
+              This project is designed to work with the Kitsune Intrusion
+              Detection System (IDS), a machine learning-based network anomaly
+              detection system. Kitsune IDS analyzes network traffic and
+              identifies malignant packets based on various features.
+            </p>
+            <p>
+              The Malignant Packet Logger extends Kitsune's capabilities by
+              providing a secure storage mechanism for the features of detected
+              malignant packets, ensuring that evidence of security incidents is
+              preserved in an immutable form.
+            </p>
+            <p>
+              The dataset used for this project contains various attack types
+              including ARP MitM, Active Wiretap, Fuzzing, Mirai, OS Scan, SSDP
+              Flood, SSL Renegotiation, SYN DoS, and Video Injection.
+            </p>
+          </div>
+          <div class="col-lg-6 text-center">
+            <div class="card shadow">
+              <div class="card-body">
+                <svg
+                  width="400"
+                  height="300"
+                  viewBox="0 0 400 300"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <!-- Network Security Concept -->
+                  <defs>
+                    <linearGradient
+                      id="redGradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stop-color="#e74c3c" />
+                      <stop offset="100%" stop-color="#c0392b" />
+                    </linearGradient>
+                  </defs>
+
+                  <!-- Background -->
+                  <rect x="0" y="0" width="400" height="300" fill="#f8f9fa" />
+
+                  <!-- Network -->
+                  <circle
+                    cx="200"
+                    cy="150"
+                    r="100"
+                    fill="none"
+                    stroke="#bdc3c7"
+                    stroke-width="1"
+                  />
+                  <circle
+                    cx="200"
+                    cy="150"
+                    r="70"
+                    fill="none"
+                    stroke="#bdc3c7"
+                    stroke-width="1"
+                  />
+                  <circle
+                    cx="200"
+                    cy="150"
+                    r="40"
+                    fill="none"
+                    stroke="#bdc3c7"
+                    stroke-width="1"
+                  />
+
+                  <!-- Nodes -->
+                  <circle cx="200" cy="50" r="15" fill="#3498db" />
+                  <circle cx="300" cy="150" r="15" fill="#3498db" />
+                  <circle cx="200" cy="250" r="15" fill="#3498db" />
+                  <circle cx="100" cy="150" r="15" fill="#3498db" />
+                  <circle cx="240" cy="90" r="10" fill="#2ecc71" />
+                  <circle cx="260" cy="210" r="10" fill="#2ecc71" />
+                  <circle cx="140" cy="210" r="10" fill="#2ecc71" />
+                  <circle cx="140" cy="90" r="10" fill="#2ecc71" />
+
+                  <!-- Connections -->
+                  <line
+                    x1="200"
+                    y1="50"
+                    x2="300"
+                    y2="150"
+                    stroke="#bdc3c7"
+                    stroke-width="2"
+                  />
+                  <line
+                    x1="300"
+                    y1="150"
+                    x2="200"
+                    y2="250"
+                    stroke="#bdc3c7"
+                    stroke-width="2"
+                  />
+                  <line
+                    x1="200"
+                    y1="250"
+                    x2="100"
+                    y2="150"
+                    stroke="#bdc3c7"
+                    stroke-width="2"
+                  />
+                  <line
+                    x1="100"
+                    y1="150"
+                    x2="200"
+                    y2="50"
+                    stroke="#bdc3c7"
+                    stroke-width="2"
+                  />
+
+                  <!-- Malicious Traffic -->
+                  <path
+                    d="M 180 150 C 150 120 250 80 300 150"
+                    stroke="url(#redGradient)"
+                    stroke-width="3"
+                    fill="none"
+                    stroke-dasharray="5,3"
+                  />
+                  <path
+                    d="M 220 150 C 250 180 150 220 100 150"
+                    stroke="url(#redGradient)"
+                    stroke-width="3"
+                    fill="none"
+                    stroke-dasharray="5,3"
+                  />
+
+                  <!-- Malicious Packets -->
+                  <rect
+                    x="250"
+                    y="120"
+                    width="10"
+                    height="10"
+                    rx="2"
+                    fill="#e74c3c"
+                    transform="rotate(45, 255, 125)"
+                  />
+                  <rect
+                    x="140"
+                    y="180"
+                    width="10"
+                    height="10"
+                    rx="2"
+                    fill="#e74c3c"
+                    transform="rotate(45, 145, 185)"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Stack -->
+        <h3 class="text-center mb-4">Technical Stack</h3>
+        <div class="row g-4 mb-5">
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <i class="fab fa-ethereum fa-4x text-primary mb-3"></i>
+                <h4 class="card-title h5">Ethereum Blockchain</h4>
+                <p class="card-text">
+                  The foundation of our system, providing immutable storage for
+                  packet features through smart contracts.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <i class="fab fa-python fa-4x text-primary mb-3"></i>
+                <h4 class="card-title h5">Python & Web3.py</h4>
+                <p class="card-text">
+                  Powers the backend logic, feature extraction, and blockchain
+                  interaction through the Web3.py library.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <i class="fab fa-js fa-4x text-primary mb-3"></i>
+                <h4 class="card-title h5">JavaScript & Web3.js</h4>
+                <p class="card-text">
+                  Enables frontend blockchain interaction, allowing users to log
+                  packets directly from the web interface.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Future Work -->
+        <h3 class="text-center mb-4">Future Work</h3>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h4 class="card-title h5">Layer 2 Integration</h4>
+                <p class="card-text">
+                  Implement support for Layer 2 scaling solutions like
+                  Optimistic Rollups or zkRollups to reduce gas costs and
+                  increase throughput.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h4 class="card-title h5">Advanced Analytics</h4>
+                <p class="card-text">
+                  Develop on-chain analytics capabilities to identify patterns
+                  and trends in logged malignant packets.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h4 class="card-title h5">Multi-IDS Support</h4>
+                <p class="card-text">
+                  Extend the system to support multiple intrusion detection
+                  systems beyond Kitsune.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Malignant Packet Logger</h5>
+            <p>
+              A blockchain-based solution for securely logging features of
+              malignant network packets.
+            </p>
+          </div>
+          <div class="col-md-3">
+            <h5>Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#documentation">Documentation</a></li>
+              <li><a href="#demo">Demo</a></li>
+              <li><a href="#about">About</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5>Resources</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  href="https://github.com/divaamahajan/DataMining"
+                  target="_blank"
+                  >Kitsune IDS Dataset</a
+                >
+              </li>
+              <li>
+                <a href="https://web3py.readthedocs.io/" target="_blank"
+                  >Web3.py Docs</a
+                >
+              </li>
+              <li>
+                <a href="https://ethereum.org/" target="_blank">Ethereum</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <div class="text-center">
+          <p>&copy; 2025 Malignant Packet Logger. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+      // Demo functionality
+      $(document).ready(function () {
+        // Smooth scrolling for anchor links
+        $('a[href^="#"]').on("click", function (e) {
+          e.preventDefault();
+
+          var target = this.hash;
+          var $target = $(target);
+
+          $("html, body").animate(
+            {
+              scrollTop: $target.offset().top - 70,
+            },
+            800,
+            "swing"
+          );
+        });
+
+        // Add feature row
+        $("#addFeatureBtn").click(function () {
+          if ($(".feature-row").length < 10) {
+            const newRow = `
+                        <div class="feature-row mb-2">
+                            <div class="row g-2">
+                                <div class="col-5">
+                                    <input type="number" class="form-control feature-index" placeholder="Index" min="0" required>
+                                </div>
+                                <div class="col-7">
+                                    <div class="input-group">
+                                        <input type="number" class="form-control feature-value" placeholder="Value" step="any" required>
+                                        <button type="button" class="btn btn-outline-danger remove-feature">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+            $("#featuresContainer").append(newRow);
+          }
+
+          if ($(".feature-row").length >= 10) {
+            $("#addFeatureBtn").prop("disabled", true);
+          }
+        });
+
+        // Remove feature row
+        $(document).on("click", ".remove-feature", function () {
+          $(this).closest(".feature-row").remove();
+          $("#addFeatureBtn").prop("disabled", false);
+        });
+
+        // Load sample data
+        $("#loadSampleBtn").click(function () {
+          // Clear existing features
+          $("#featuresContainer").empty();
+
+          // Sample data
+          const sampleData = [
+            { index: 8, value: 140928.76008 },
+            { index: 5, value: 139699.42171 },
+            { index: 2, value: 137946.585241 },
+            { index: 10, value: 137946.585241 },
+            { index: 9, value: 1297.930495 },
+            { index: 7, value: 1294.355651 },
+            { index: 4, value: 1290.621872 },
+            { index: 1, value: 1287.930495 },
+            { index: 6, value: 862.105671 },
+            { index: 3, value: 277.376266 },
+          ];
+
+          // Set attack type
+          $("#attackType").val("ARP_MitM");
+
+          // Add sample features
+          sampleData.forEach((feature) => {
+            const newRow = `
+                        <div class="feature-row mb-2">
+                            <div class="row g-2">
+                                <div class="col-5">
+                                    <input type="number" class="form-control feature-index" placeholder="Index" min="0" value="${feature.index}" required>
+                                </div>
+                                <div class="col-7">
+                                    <div class="input-group">
+                                        <input type="number" class="form-control feature-value" placeholder="Value" step="any" value="${feature.value}" required>
+                                        <button type="button" class="btn btn-outline-danger remove-feature">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+            $("#featuresContainer").append(newRow);
+          });
+
+          // Disable add button if we have 10 features
+          if ($(".feature-row").length >= 10) {
+            $("#addFeatureBtn").prop("disabled", true);
+          }
+        });
+
+        // Form submission
+        $("#packetForm").submit(function (e) {
+          e.preventDefault();
+
+          // Get attack type
+          const attackType = $("#attackType").val();
+
+          // Get features
+          const features = [];
+          $(".feature-row").each(function () {
+            const index = $(this).find(".feature-index").val();
+            const value = $(this).find(".feature-value").val();
+
+            if (index && value) {
+              features.push({
+                index: parseInt(index),
+                value: parseFloat(value),
+              });
+            }
+          });
+
+          // Validate
+          if (!attackType || features.length === 0) {
+            alert("Please fill in all required fields");
+            return;
+          }
+
+          // Show transaction status
+          $("#noTransactionMessage").addClass("d-none");
+          $("#transactionStatus").removeClass("d-none");
+          $("#statusAlert")
+            .removeClass("alert-success alert-danger")
+            .addClass("alert-info");
+          $("#statusSpinner").show();
+          $("#statusMessage").text("Processing transaction...");
+
+          // Hide packet details
+          $("#packetDetails").addClass("d-none");
+          $("#noPacketMessage").removeClass("d-none");
+
+          // Simulate blockchain transaction (demo mode)
+          setTimeout(function () {
+            // Generate transaction hash
+            const txHash =
+              "0x" +
+              Array.from({ length: 64 }, () =>
+                Math.floor(Math.random() * 16).toString(16)
+              ).join("");
+
+            // Update transaction status
+            $("#statusAlert")
+              .removeClass("alert-info alert-danger")
+              .addClass("alert-success");
+            $("#statusSpinner").hide();
+            $("#statusMessage").text("Transaction successful!");
+            $("#txHash").val(txHash);
+
+            // Show packet details
+            $("#noPacketMessage").addClass("d-none");
+            $("#packetDetails").removeClass("d-none");
+
+            // Update packet details
+            $("#packetId").text("1");
+            $("#packetTimestamp").text(new Date().toLocaleString());
+            $("#packetAttackType").text(attackType);
+            $("#packetReporter").text(
+              "0x8c995b52c09578E7B2b2815c13AAc9de9f8a4635"
+            );
+
+            // Update features table
+            $("#featuresTable").empty();
+            features.forEach((feature) => {
+              $("#featuresTable").append(`
+                            <tr>
+                                <td>${feature.index}</td>
+                                <td>${feature.value.toFixed(6)}</td>
+                            </tr>
+                        `);
+            });
+          }, 2000);
+        });
+
+        // Copy transaction hash
+        $("#copyTxBtn").click(function () {
+          const txHash = $("#txHash").val();
+          navigator.clipboard.writeText(txHash).then(function () {
+            alert("Transaction hash copied to clipboard!");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
