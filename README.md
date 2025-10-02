@@ -46,7 +46,4 @@ The system operates in three main stages:
 ---
 
 ## 👨‍💻 Authors
-
-* [cite_start]**Manjit Kumar Nayak** [cite: 2]
-* [cite_start]**Debasis Gountia** [cite: 2]
 * [cite_start]**Satyabrat Jena** [cite: 2]
